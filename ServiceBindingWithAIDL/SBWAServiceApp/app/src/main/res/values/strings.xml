@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SBWAServiceApp</string>
+    <string name="permission_label_TEST_SERVICE_ACCESS_PERMISSION">Remote Service Access</string>
+    <string name="permission_description_TEST_SERVICE_ACCESS_PERMISSION">Allow This App to Access TestService</string>
+</resources>
