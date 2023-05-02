@@ -43,10 +43,14 @@ public class MyExportedService extends Service {
         @Override
         public void handleMessage(Message msg) {
             MyExportedService service = serviceRef.get();
+            // msg.what is used to identify what this message is about
             if (service != null && msg.what == GET_RANDOM_NUMBER_FLAG) {
+                // in this example we are using arg1 to pass an integer into the message
+                // we can use obj to pass complex object
                 Message messageSendRandomNumber = Message.obtain(null, GET_RANDOM_NUMBER_FLAG);
                 messageSendRandomNumber.arg1 = service.getRandomNumber();
                 try {
+                    // the replyTo is used to send a reply message to the sender
                     msg.replyTo.send(messageSendRandomNumber);
                 } catch (RemoteException e) {
                     Log.i(TAG, "" + e.getMessage());
